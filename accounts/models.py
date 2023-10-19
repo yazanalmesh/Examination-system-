@@ -17,11 +17,11 @@ class Categories(models.Model):
     cat_number = models.IntegerField(unique=True)
     specalize = models.ForeignKey(Specalizes, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.cat_number
 
 class Specalizes(models.Model):
     spec_name = models.CharField(unique=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.spec_name
