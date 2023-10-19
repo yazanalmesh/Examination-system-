@@ -6,10 +6,18 @@ from django.db import models
 class Spec(models.Model):
     spec_name = models.CharField(unique=True)
 
+    def __str__(self):
+        return self.spec_name
+
+
 
 class Category(models.Model):
     cat_number = models.IntegerField(unique=True)
-    # specalize = models.ForeignKey(Spec, on_delete=models.CASCADE)
+    specalize = models.ForeignKey(Spec, on_delete=models.CASCADE)
+
+    def __str__(self) :
+        return self.cat_number
+
 
     
 class Student(models.Model):
