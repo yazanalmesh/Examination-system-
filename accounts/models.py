@@ -6,8 +6,8 @@ from django.db import models
 
 class Students(models.Model):
     username = models.CharField()
-    specalize = models.ForeignKey(spec_name, on_delete=models.CASCADE)
-    group = models.ForeignKey(cat_number , on_delete=models.CASCADE)
+    specalize = models.ForeignKey(Specalizes, on_delete=models.CASCADE)
+    group = models.ForeignKey(Categories , on_delete=models.CASCADE)
 
 class Teachers(models.Model):
     username = models.CharField(unique=True)
@@ -15,7 +15,7 @@ class Teachers(models.Model):
 
 class Categories(models.Model):
     cat_number = models.IntegerField(unique=True)
-    specalize = models.ForeignKey(spec_name, on_delete=models.CASCADE)
+    specalize = models.ForeignKey(Specalizes, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.cat_number
