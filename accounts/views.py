@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login
 
 def login_view(request):
     form = TeacherLoginForm()
-    if request.teachers.is_authenticated:
+    if request.user.is_authenticated:
         return redirect('home.html')
     if request.method == 'POST':
         form = TeacherLoginForm(request.POST)
@@ -19,3 +19,6 @@ def login_view(request):
                 return redirect('home.html')
             else:
                 return render(request, 'login.html', {'form': form})
+            
+def home_view(request):
+    return render(request, 'home.html')
