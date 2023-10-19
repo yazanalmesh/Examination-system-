@@ -28,6 +28,3 @@ class Student(models.Model):
 class Teacher(models.Model):
     username = models.CharField(max_length=64, unique=True)
     password = models.CharField(max_length=64)
-
-
-
