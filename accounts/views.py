@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import TeacherLoginForm
-
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 
